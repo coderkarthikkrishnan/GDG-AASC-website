@@ -1,0 +1,16 @@
+/* Resources list + editor */
+.notes {
+    margin: 8px 0 10px;
+    color: #222;
+    line-height: 1.5;
+}
+
+.links .btn.link {
+    margin-right: 8px;
+    margin-bottom: 6px;
+}
+
+.label {
+    font-weight: 600;
+    margin-top: 8px;
+}

@@ -1,0 +1,7 @@
+/* Page-specific tweaks for EventEdit */
+/* Inherits layout, form, grid, and button styles from styles/common.css */
+
+/* Example: make textarea a bit taller by default on this page */
+.form textarea.textarea {
+    min-height: 120px;
+}

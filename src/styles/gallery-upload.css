@@ -1,0 +1,7 @@
+/* Page-specific tweaks for GalleryUpload */
+/* Inherits styles from styles/common.css */
+
+/* Make preview image consistent */
+img[alt="preview"] {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}

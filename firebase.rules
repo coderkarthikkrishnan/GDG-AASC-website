@@ -1,0 +1,61 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.email == 'gskarthikkrishnan@gmail.com';
+    }
+
+    // Events: public read, admin write
+    match /events/{id} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Team: public read, admin write with field checks
+    match /team/{id} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin() &&
+        request.resource.data.keys().hasOnly(['name','role','photoUrl','linkedin','github','bio','order','createdAt','updatedAt']) &&
+        request.resource.data.name is string &&
+        request.resource.data.role is string &&
+        (!('photoUrl' in request.resource.data) || request.resource.data.photoUrl is string) &&
+        (!('linkedin' in request.resource.data) || request.resource.data.linkedin is string) &&
+        (!('github' in request.resource.data) || request.resource.data.github is string) &&
+        (!('bio' in request.resource.data) || request.resource.data.bio is string) &&
+        (!('order' in request.resource.data) || request.resource.data.order is int);
+    }
+
+    // Gallery: public read, admin write with uploader metadata
+    match /gallery/{id} {
+      allow read: if true;
+      allow create: if isAdmin() && isSignedIn() &&
+        request.resource.data.keys().hasOnly(['imageUrl','caption','eventId','uploadedBy','uploadedAt']) &&
+        request.resource.data.imageUrl is string &&
+        (!('caption' in request.resource.data) || request.resource.data.caption is string) &&
+        (!('eventId' in request.resource.data) || request.resource.data.eventId is string || request.resource.data.eventId == null) &&
+        request.resource.data.uploadedBy == request.auth.uid &&
+        request.resource.data.uploadedAt is timestamp;
+      allow update, delete: if isAdmin();
+    }
+
+    // Resources: auth-only read, admin write with field checks
+    match /resources/{id} {
+      allow read: if isSignedIn();
+      allow create, update, delete: if isAdmin() &&
+        request.resource.data.keys().hasOnly(['eventName','notes','links','createdAt','updatedAt']) &&
+        request.resource.data.eventName is string &&
+        (!('notes' in request.resource.data) || request.resource.data.notes is string) &&
+        (!('links' in request.resource.data) || request.resource.data.links is list);
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
