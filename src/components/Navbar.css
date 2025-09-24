@@ -91,9 +91,7 @@
         padding: 10px 12px;
     }
 
-    .brandText {
-        display: none;
-    }
+
 
     .navMain {
         position: absolute;
@@ -204,4 +202,5 @@
 
 .menuItem:hover {
     background: #f6f8fb;
+
 }
