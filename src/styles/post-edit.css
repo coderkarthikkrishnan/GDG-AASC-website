@@ -1,7 +1,0 @@
-/* Page-specific tweaks for PostEdit */
-/* Inherits core form and layout from styles/common.css */
-
-/* Make the body editor taller by default */
-.form textarea.textarea {
-    min-height: 220px;
-}

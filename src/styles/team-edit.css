@@ -1,7 +1,0 @@
-/* Page-specific tweaks for TeamEdit */
-/* Inherits layout and form styles from styles/common.css */
-
-/* Slightly larger avatar preview */
-img[alt="member"] {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-}
