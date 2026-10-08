@@ -1,0 +1,88 @@
+export const projectCategories = ["All", "Web", "AI/ML", "Mobile", "Cloud & Tools"];
+
+export const projectsData = [
+  {
+    id: "campus-connect-aasc",
+    title: "AASC CampusConnect Portal",
+    category: "Web",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A centralized digital hub for Alpha Arts and Science College students to discover events, access department circulars, peer notes, and community club notices.",
+    tech: ["React", "Tailwind CSS", "Firebase", "Cloud Functions"],
+    github: "https://github.com/gdg-aasc/campus-connect",
+    demo: "https://campus-connect-demo.web.app",
+    featured: true,
+    contributors: ["Surya K.", "Rithvik N.", "Ananya S."],
+    badgeColor: "blue",
+  },
+  {
+    id: "alpha-ai-advisor",
+    title: "Alpha AI – Student Academic Assistant",
+    category: "AI/ML",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+    description:
+      "An intelligent conversational assistant powered by Google Gemini Pro and RAG to answer student inquiries about college curriculum, syllabus, and exam timetables.",
+    tech: ["Gemini 1.5 Pro", "Python", "FastAPI", "Pinecone", "React"],
+    github: "https://github.com/gdg-aasc/alpha-ai-advisor",
+    demo: "https://alpha-ai.gdgaasc.com",
+    featured: true,
+    contributors: ["Pooja Raman", "Aakash B."],
+    badgeColor: "red",
+  },
+  {
+    id: "attendance-tracker-app",
+    title: "Pulse: Attendance & Timetable Companion",
+    category: "Mobile",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A cross-platform mobile application built with Flutter featuring offline-first schedule tracking, attendance percentage alerts, and smart timetable reminders.",
+    tech: ["Flutter", "Dart", "SQLite", "Firebase Messaging"],
+    github: "https://github.com/gdg-aasc/pulse-mobile",
+    demo: "https://play.google.com",
+    featured: false,
+    contributors: ["Karthik Raja", "Gowtham Raj"],
+    badgeColor: "green",
+  },
+  {
+    id: "cloud-eval-judge",
+    title: "AlphaJudge: Algorithmic Code Runner",
+    category: "Cloud & Tools",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    description:
+      "An isolated containerized online code execution sandbox used by the competitive programming domain for running and scoring weekly coding contests.",
+    tech: ["Docker", "Google Cloud Run", "Node.js", "Redis"],
+    github: "https://github.com/gdg-aasc/alphajudge",
+    demo: "https://judge.gdgaasc.com",
+    featured: false,
+    contributors: ["Vigneshwaran M.", "Dinesh Kumar"],
+    badgeColor: "yellow",
+  },
+  {
+    id: "gdg-event-scanner",
+    title: "GDG FastPass QR Check-in System",
+    category: "Web",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+    description:
+      "A progressive web application allowing instant QR code badge generation and rapid barcode check-in for on-campus GDG workshop attendees.",
+    tech: ["React", "ZBar WASM", "Firebase Firestore", "Tailwind CSS"],
+    github: "https://github.com/gdg-aasc/fastpass-qr",
+    demo: "https://fastpass.gdgaasc.com",
+    featured: false,
+    contributors: ["Surya K.", "Deepika M."],
+    badgeColor: "blue",
+  },
+  {
+    id: "open-syllabus-api",
+    title: "OpenSyllabus Community API",
+    category: "Cloud & Tools",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
+    description:
+      "An open-source RESTful and GraphQL API serving verified course syllabi, past semester question papers, and resource links to student developers.",
+    tech: ["TypeScript", "Express", "MongoDB", "Swagger UI"],
+    github: "https://github.com/gdg-aasc/open-syllabus-api",
+    demo: "https://api.gdgaasc.com/docs",
+    featured: false,
+    contributors: ["Naveen Prasad", "Rithvik N."],
+    badgeColor: "green",
+  },
+];
